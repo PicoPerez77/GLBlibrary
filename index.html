@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Galería de Assets 3D Pro</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/exporters/GLTFExporter.js"></script>
+</head>
+<body>
+
+    <div id="app-container">
+        <aside id="sidebar-left">
+            <h2>Mis Assets (.GLB)</h2>
+            <div id="gallery"></div>
+        </aside>
+
+        <main id="canvas-container"></main>
+
+        <aside id="sidebar-right">
+            <div class="control-section">
+                <h2>Objetos en Escena</h2>
+                <div id="objects-list" class="objects-list">
+                    <p class="empty-list-msg">No hay objetos en la escena</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="control-section">
+                <h2>Controles</h2>
+                
+                <div class="slider-group">
+    <label for="spacing-slider">Espaciado de fila:</label>
+    <div class="slider-row">
+        <input type="range" id="spacing-slider" min="-2" max="5" step="0.01" value="0">
+        <input type="number" id="spacing-input" min="-2" max="5" step="0.01" value="0.00" class="precise-input">
+    </div>
+</div>
+
+                <hr class="sub-hr">
+
+                <h3>Iluminación</h3>
+                
+                <div class="slider-group">
+                    <label for="exposure-slider">Exposición (ToneMap):</label>
+                    <div class="slider-row">
+                        <input type="range" id="exposure-slider" min="0.1" max="3" step="0.1" value="1">
+                        <span id="exposure-value">1.0</span>
+                    </div>
+                </div>
+
+                <div class="slider-group">
+                    <label for="ambient-slider">Luz Ambiente:</label>
+                    <div class="slider-row">
+                        <input type="range" id="ambient-slider" min="0" max="3" step="0.1" value="1.2">
+                        <span id="ambient-value">1.2</span>
+                    </div>
+                </div>
+
+                <div class="slider-group">
+                    <label for="main-light-slider">Luz Principal:</label>
+                    <div class="slider-row">
+                        <input type="range" id="main-light-slider" min="0" max="3" step="0.1" value="1.5">
+                        <span id="main-light-value">1.5</span>
+                    </div>
+                </div>
+
+                <div class="slider-group">
+                    <label for="fill-light-slider">Luz de Relleno:</label>
+                    <div class="slider-row">
+                        <input type="range" id="fill-light-slider" min="0" max="3" step="0.1" value="0.8">
+                        <span id="fill-light-value">0.8</span>
+                    </div>
+                </div>
+            </div>
+
+            <button id="export-btn" class="primary-btn">Exportar Escena .GLB</button>
+        </aside>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
