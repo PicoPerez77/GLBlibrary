@@ -1,0 +1,12 @@
+[
+  {
+    "archivo": "floor01.glb",
+    "imagen": "floor01.jpg",
+    "nombre": "Estilo 1"
+  },
+  {
+    "archivo": "floor02.glb",
+    "imagen": "floor02.jpg",
+    "nombre": "Estilo 2"
+  }
+]

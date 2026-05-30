@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Galería de Assets 3D - Versión 2.2 Ancho de Pasillo Variable</title>
+    <title>Super Store Builder Pro - Versión 2 Final</title>
     <link rel="stylesheet" href="style.css">
 
     <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
@@ -14,19 +14,33 @@
 <body>
 
     <div id="app-container">
+        
         <aside id="sidebar-left">
-            <h2>Mis Assets (.GLB)</h2>
-            <div id="gallery"></div>
+            <div id="section-assets" class="gallery-section">
+                <h2>Mis Assets (.GLB)</h2>
+                <div id="gallery"></div>
+            </div>
+            
+            <div id="resizer-v-left" class="resizer vertical-resizer"></div>
+            
+            <div id="section-floors" class="gallery-section">
+                <h2>Texturas de Piso</h2>
+                <div id="floor-gallery"></div>
+            </div>
         </aside>
+
+        <div id="resizer-left" class="resizer horizontal-resizer"></div>
 
         <main id="canvas-container"></main>
 
+        <div id="resizer-right" class="resizer horizontal-resizer"></div>
+
         <aside id="sidebar-right">
             
-            <div class="control-section">
+            <div id="section-structures" class="control-section">
                 <h2>Estructura de Filas</h2>
                 
-                <div style="margin-bottom: 12px; display: flex; align-direction: column; gap: 5px;">
+                <div style="margin-bottom: 12px; display: flex; flex-direction: column; gap: 5px;">
                     <label for="row-selector" style="font-size: 12px; color: #aaa;">Fila Activa:</label>
                     <select id="row-selector" style="width: 100%; background: #1a1a1a; color: #007acc; border: 1px solid #444; padding: 6px; border-radius: 4px; font-weight: bold;">
                         <optgroup label="Filas Vista Frente">
@@ -56,14 +70,18 @@
                     </select>
                 </div>
 
+                <button id="add-gondola-end-btn" class="gondola-btn-inactive" style="width: 100%; border: 1px solid #444; padding: 8px; border-radius: 4px; font-size: 11px; font-weight: bold; cursor: not-allowed; margin-bottom: 10px; transition: all 0.2s;">
+                    + Añadir Cabezal (Solo en filas opuestas)
+                </button>
+
                 <div id="objects-list" class="objects-list">
                     <p class="empty-list-msg">No hay objetos en esta fila</p>
                 </div>
             </div>
 
-            <hr>
+            <div id="resizer-v-right" class="resizer vertical-resizer"></div>
 
-            <div class="control-section">
+            <div id="section-controls" class="control-section">
                 <h2>Controles</h2>
                 
                 <div class="slider-group">
